@@ -11,11 +11,11 @@ resource "azurerm_container_registry" "this" {
 }
 
 module "aks" {
-  source = "../../../modules/terraform-azurerm-aks"
-  prefix = var.environment
-  cluster_name              = var.cluster_name
-  resource_group_name       = var.resource_group_name
-#   kubernetes_version        = "1.30"
+  source              = "../../../modules/terraform-azurerm-aks"
+  prefix              = var.environment
+  cluster_name        = var.cluster_name
+  resource_group_name = var.resource_group_name
+  #   kubernetes_version        = "1.30"
   automatic_channel_upgrade = "stable"
   agents_availability_zones = ["1"]
   agents_count              = null

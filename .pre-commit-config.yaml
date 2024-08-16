@@ -3,3 +3,21 @@ repos:
   rev: 89704613a746e1244aab916c44c11a400889eb22
   hooks:
     - id: terraform_fmt
+    - id: infracost_breakdown
+      name: bootstrap-cost
+      args:
+        - --args=--path=./stages/dev/00-bootstrap
+        - --args=--format=table
+      verbose: true
+    - id: infracost_breakdown
+      name: network-cost
+      args:
+        - --args=--path=./stages/dev/00-bootstrap
+        - --args=--format=table
+      verbose: true
+    - id: infracost_breakdown
+      name: compute-cost
+      args:
+        - --args=--path=./stages/dev/02-init-aks
+        - --args=--format=table
+      verbose: true

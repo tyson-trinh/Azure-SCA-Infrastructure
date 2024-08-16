@@ -1,12 +1,12 @@
 variable "location" {
-  type = string
+  type    = string
   default = "eastasia"
 }
 
 variable "resource_group_name" {
-  type = string
+  type        = string
   description = "The hub resource group name"
-  default = "rg-0"
+  default     = "rg-0"
 }
 
 variable "vnet_id" {
@@ -18,16 +18,16 @@ variable "eks_subnet_id" {
 }
 
 variable "db_subnet_id" {
-  type    = string
+  type = string
 }
 
 variable "acr_name" {
-  type = string
+  type    = string
   default = "jims-acr"
 }
 
 variable "cluster_name" {
-  type = string
+  type    = string
   default = "development-jims"
 }
 

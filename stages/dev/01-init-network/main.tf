@@ -1,7 +1,7 @@
 locals {
-  vnet_id = module.vnet.vnet_id
+  vnet_id       = module.vnet.vnet_id
   eks_subnet_id = lookup(module.vnet.vnet_subnets_name_id, "subnet1")
-  db_subnet_id = lookup(module.vnet.vnet_subnets_name_id, "subnet2")
+  db_subnet_id  = lookup(module.vnet.vnet_subnets_name_id, "subnet2")
 }
 
 module "vnet" {
@@ -9,9 +9,9 @@ module "vnet" {
   vnet_name           = var.vnet_name
   resource_group_name = var.resource_group_name
   use_for_each        = var.use_for_each
-  address_space = ["10.0.0.0/16"]
-  subnet_prefixes = ["10.0.0.0/22", "10.0.4.0/24"]
-  subnet_names = ["subnet1", "subnet2"]
+  address_space       = ["10.0.0.0/16"]
+  subnet_prefixes     = ["10.0.0.0/22", "10.0.4.0/24"]
+  subnet_names        = ["subnet1", "subnet2"]
   vnet_location       = var.location
 
   nsg_ids = {

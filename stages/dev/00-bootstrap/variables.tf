@@ -1,23 +1,23 @@
 variable "location" {
-  type = string
+  type        = string
   description = "The location of resource on AZ"
-  default = "switzerlandnorth"
+  default     = "switzerlandnorth"
 }
 
 variable "resource_group_name" {
-  type = string
+  type        = string
   description = "The Resource Group"
-  default = "svidify-jims-dev"
+  default     = "svidify-jims-dev"
 }
 
 variable "organization_name" {
-  type = string
+  type        = string
   description = "The name of organization"
-  default = "svidify"
+  default     = "svidify"
 }
 
 variable "storage_account_name" {
-  type = string
+  type    = string
   default = "development"
 }
 

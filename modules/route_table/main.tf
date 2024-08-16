@@ -11,9 +11,9 @@ resource "azurerm_route_table" "rt" {
   }
 
   route {
-    name                   = "firewall_to_internet"
-    address_prefix         = "${var.firewall_public_ip}/32"
-    next_hop_type          = "Internet"
+    name           = "firewall_to_internet"
+    address_prefix = "${var.firewall_public_ip}/32"
+    next_hop_type  = "Internet"
   }
 }
 
