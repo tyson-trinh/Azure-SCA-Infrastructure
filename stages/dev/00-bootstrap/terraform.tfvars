@@ -1,0 +1,6 @@
+resource_group_name = "tyson-jims-dev"
+location = "eastasia"
+organization_name = "tysontrinh"
+storage_account_name = "tysonjimsdev"
+subscription_id = "2caf556e-4b24-4529-be28-a23bc6a5e9df"
+tenant_id = "4ef78439-6d6c-4ea0-ab14-49b9284ab4c9"
