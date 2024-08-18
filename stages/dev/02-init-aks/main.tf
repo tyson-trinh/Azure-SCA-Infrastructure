@@ -40,11 +40,10 @@ module "aks" {
   confidential_computing = {
     sgx_quote_helper_enabled = true
   }
-  enable_auto_scaling             = true
-  enable_host_encryption          = false
-  local_account_disabled          = true
-  log_analytics_workspace_enabled = false
-
+  enable_auto_scaling               = true
+  enable_host_encryption            = false
+  local_account_disabled            = true
+  log_analytics_workspace_enabled   = false
   net_profile_dns_service_ip        = "172.0.0.10"
   net_profile_service_cidr          = "172.0.0.0/16"
   network_plugin                    = "azure"
@@ -55,8 +54,13 @@ module "aks" {
   rbac_aad                          = true
   rbac_aad_managed                  = true
   role_based_access_control_enabled = true
+  rbac_aad_azure_rbac_enabled       = true
   sku_tier                          = "Free"
   vnet_subnet_id                    = var.eks_subnet_id
+
+  attached_acr_id_map = {
+    this = azurerm_container_registry.this.id
+  }
 
   agents_labels = {
     "node1" : "label1"
