@@ -23,6 +23,7 @@ module "aks" {
   agents_max_pods           = 100
   agents_min_count          = 1
   agents_pool_name          = "development"
+  agents_size               = "Standard_D4ps_v5"
   agents_pool_linux_os_configs = [
     {
       transparent_huge_page_enabled = "always"
@@ -63,9 +64,9 @@ module "aks" {
   }
 
   agents_labels = {
-    "node1" : "label1"
+    "environment" : "development"
   }
   agents_tags = {
-    "Agent" : "agentTag"
+    "environment" : "development"
   }
 }

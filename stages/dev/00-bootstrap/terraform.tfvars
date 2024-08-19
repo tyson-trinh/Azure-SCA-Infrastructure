@@ -1,5 +1,5 @@
 resource_group_name  = "tyson-jims-dev"
-location             = "eastasia"
+location             = "centralindia"
 organization_name    = "tysontrinh"
 storage_account_name = "tysonjimsdev"
 subscription_id      = "2caf556e-4b24-4529-be28-a23bc6a5e9df"
