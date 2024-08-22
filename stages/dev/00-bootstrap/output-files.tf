@@ -42,6 +42,15 @@ locals {
   }
 }
 
+resource "azurerm_storage_blob" "example" {
+  for_each        = local.backends
+  name                   = each.key
+  storage_account_name   = azurerm_storage_account.this.name
+  storage_container_name = azurerm_storage_container.provider_keeper.name
+  type                   = "Block"
+  source_content         = each.value
+}
+
 resource "local_file" "all_backend_state" {
   for_each        = local.backends
   file_permission = "0644"

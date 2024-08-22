@@ -34,3 +34,9 @@ resource "azurerm_storage_container" "init_workload" {
   storage_account_name  = azurerm_storage_account.this.name
   container_access_type = "private"
 }
+
+resource "azurerm_storage_container" "provider_keeper" {
+  name                  = "providerkeeper"
+  storage_account_name  = azurerm_storage_account.this.name
+  container_access_type = "private"
+}
