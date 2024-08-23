@@ -42,7 +42,7 @@ locals {
   }
 }
 
-resource "azurerm_storage_blob" "example" {
+resource "azurerm_storage_blob" "this" {
   for_each        = local.backends
   name                   = each.key
   storage_account_name   = azurerm_storage_account.this.name
